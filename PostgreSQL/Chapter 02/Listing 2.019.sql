@@ -4,8 +4,7 @@
 SET search_path = SalesOrdersSample;
 
 CREATE FUNCTION UpdateOrdersOrderTotals() 
-RETURNS trigger
-LANGUAGE plpgsql AS 
+RETURNS trigger AS 
 $BODY$
     BEGIN
 	  UPDATE  Orders
@@ -20,7 +19,7 @@ $BODY$
 	    SELECT OrderNumber FROM NEW
 	  );
     END;
-$BODY$
+$BODY$ LANGUAGE plpgsql;
 
 CREATE TRIGGER updateOrdersOrderTotalsTrig AFTER INSERT OR UPDATE OR DELETE
 ON Orders 
