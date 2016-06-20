@@ -18,7 +18,7 @@ BEGIN
 		ON Products.ProductNumber = Order_Details.ProductNumber
 	WHERE ProductName = ProdName;
 END;
-$BODY$
+$BODY$;
 
 --Schema must be included for function invocation to work
 SELECT C.CustomerID, C.CustFirstName, C.CustLastName
